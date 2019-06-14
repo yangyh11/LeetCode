@@ -39,6 +39,10 @@ package com.yangyh.difficulty.easy.reverse;
  * 0。
  * @author: yangyh
  * @create: 2019-03-11 14:56
+ * √ Accepted
+ *   √ 1032/1032 cases passed (14 ms)
+ *   √ Your runtime beats 88.9 % of java submissions
+ *   √ Your memory usage beats 72.04 % of java submissions (34.7 MB)
  **/
 public class Solution {
     public int reverse(int x) {
@@ -56,14 +60,17 @@ public class Solution {
         }
 
         long l = Long.valueOf(reverseStr);
+
+        //判断是否越界
         if (l > Integer.MAX_VALUE || l < Integer.MIN_VALUE) {
             return 0;
         }
+
         return Integer.valueOf(reverseStr);
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.reverse(-123));
+        System.out.println(solution.reverse(-230));
     }
 }

@@ -40,29 +40,34 @@ package com.yangyh.difficulty.easy.reverse;
  * @author: yangyh
  * @create: 2019-03-11 14:56
  * √ Accepted
- *   √ 1032/1032 cases passed (6 ms)
- *   √ Your runtime beats 98.4 % of java submissions
- *   √ Your memory usage beats 77.85 % of java submissions (33.2 MB)
+ *   √ 1032/1032 cases passed (12 ms)
+ *   √ Your runtime beats 89.27 % of java submissions
+ *   √ Your memory usage beats 77.35 % of java submissions (33.2 MB)
  **/
-public class Solution2 {
+public class Solution4 {
     public int reverse(int x) {
-        int rev = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x= x / 10;
-            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE && rev%10 >7) ) {
-                return 0;
-            }
-            if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE && rev%10 < 8)) {
-                return 0;
-            }
-            rev = rev *10 +pop;
+
+        StringBuffer intStr = new StringBuffer(String.valueOf(x));
+
+        StringBuffer reverseSb = intStr.reverse();
+
+        String str = reverseSb.toString();
+        if (x < 0) {
+            str = "-" + str.substring(0,str.length()-1);
         }
-        return rev;
+
+        long l = Long.valueOf(str);
+
+        //判断是否越界
+        if (l > Integer.MAX_VALUE || l < Integer.MIN_VALUE) {
+            return 0;
+        }
+
+        return Integer.valueOf(str.toString());
     }
 
     public static void main(String[] args) {
-        Solution2 solution = new Solution2();
+        Solution4 solution = new Solution4();
         System.out.println(solution.reverse(2147483647));
     }
 }

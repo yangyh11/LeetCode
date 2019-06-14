@@ -40,29 +40,37 @@ package com.yangyh.difficulty.easy.reverse;
  * @author: yangyh
  * @create: 2019-03-11 14:56
  * √ Accepted
- *   √ 1032/1032 cases passed (6 ms)
- *   √ Your runtime beats 98.4 % of java submissions
- *   √ Your memory usage beats 77.85 % of java submissions (33.2 MB)
+ *   √ 1032/1032 cases passed (11 ms)
+ *   √ Your runtime beats 89.68 % of java submissions
+ *   √ Your memory usage beats 77.52 % of java submissions (33.2 MB)
  **/
-public class Solution2 {
+public class Solution3 {
     public int reverse(int x) {
-        int rev = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x= x / 10;
-            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE && rev%10 >7) ) {
-                return 0;
+        StringBuffer reverseStr=new StringBuffer();
+        String intStr = String.valueOf(x);
+        int n = 1;
+        for (int i = 0; i < intStr.length(); i++) {
+            if (i == 0 && "-".equals(String.valueOf(intStr.charAt(i)))) {
+                reverseStr = reverseStr.append("-");
+                n = 0;
+                continue;
             }
-            if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE && rev%10 < 8)) {
-                return 0;
-            }
-            rev = rev *10 +pop;
+            String str = String.valueOf(intStr.charAt(intStr.length() - i - n));
+            reverseStr = reverseStr.append(str);
         }
-        return rev;
+
+        long l = Long.valueOf(reverseStr.toString());
+
+        //判断是否越界
+        if (l > Integer.MAX_VALUE || l < Integer.MIN_VALUE) {
+            return 0;
+        }
+
+        return Integer.valueOf(reverseStr.toString());
     }
 
     public static void main(String[] args) {
-        Solution2 solution = new Solution2();
+        Solution3 solution = new Solution3();
         System.out.println(solution.reverse(2147483647));
     }
 }
