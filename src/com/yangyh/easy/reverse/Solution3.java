@@ -1,4 +1,4 @@
-package com.yangyh.difficulty.easy.reverse;
+package com.yangyh.easy.reverse;
 
 /**
  * [7] 整数反转

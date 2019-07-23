@@ -1,4 +1,7 @@
-package com.yangyh.difficulty.easy.twosum;
+package com.yangyh.easy.twosum;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * [1] 两数之和
@@ -14,16 +17,16 @@ package com.yangyh.difficulty.easy.twosum;
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
  **/
-class Solution {
+class Solution2 {
 
     public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length-1; i++) {
-            int temp = nums[i];
-            for (int j = i + 1; j < nums.length; j++) {
-                if (temp + nums[j] == target){
-                    return new int[] {i, j};
-                }
+        Map map = new HashMap<>(nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            int temp = target - nums[i];
+            if (map.containsKey(temp)) {
+                return new int[] {(int) map.get(temp), i};
             }
+            map.put(nums[i], i);
         }
         return null;
     }

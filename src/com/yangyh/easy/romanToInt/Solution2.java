@@ -1,4 +1,4 @@
-package com.yangyh.difficulty.easy.romanToInt;
+package com.yangyh.easy.romanToInt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,11 +18,11 @@ import java.util.Map;
  * D             500
  * M             1000
  * √ Accepted
- *   √ 3999/3999 cases passed (31 ms)
- *   √ Your runtime beats 41.19 % of java submissions
- *   √ Your memory usage beats 71.27 % of java submissions (41.1 MB)
+ *   √ 3999/3999 cases passed (21 ms)
+ *   √ Your runtime beats 81.73 % of java submissions
+ *   √ Your memory usage beats 71.73 % of java submissions (40.9 MB)
  */
-public class Solution {
+public class Solution2 {
     public static void main(String[] args) {
 
         System.out.println(romanToInt("MCMXCIV"));
@@ -43,9 +43,9 @@ public class Solution {
         for (int i = chars.length - 2; i >= 0; i--) {
             char key = chars[i];
             if (map.get(key) < map.get(chars[i + 1])) {
-                number = number - map.get(key);
+                number -= map.get(key);
             } else {
-                number = number + map.get(key);
+                number += map.get(key);
             }
         }
         return number;

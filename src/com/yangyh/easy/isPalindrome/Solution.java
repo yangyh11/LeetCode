@@ -1,4 +1,4 @@
-package com.yangyh.difficulty.easy.isPalindrome;
+package com.yangyh.easy.isPalindrome;
 
 /**
  * @description: 判断一个整数是否是回文数
