@@ -2,7 +2,7 @@ package com.yangyh.medium.addTwoNumbers;
 
 
 /**
- * @description: 两数相加
+ * @description: 02-两数相加
  * ttps://leetcode-cn.com/problems/add-two-numbers/description/
  * @author: yangyh
  * @create: 2019-08-02 15:11
