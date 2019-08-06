@@ -2,7 +2,7 @@ package com.yangyh.easy.longestCommonPrefix;
 
 
 /**
- * @description: 最长公共前缀
+ * @description: 14-最长公共前缀
  * @author: yangyh
  * @create: 2019-07-23 15:57
  * https://leetcode-cn.com/problems/longest-common-prefix/description/

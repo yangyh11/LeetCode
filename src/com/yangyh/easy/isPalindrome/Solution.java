@@ -1,7 +1,7 @@
 package com.yangyh.easy.isPalindrome;
 
 /**
- * @description: 判断一个整数是否是回文数
+ * @description: 09-判断一个整数是否是回文数
  * @author: yangyh
  * @create: 2019-06-14 17:07
  * √ Accepted
