@@ -1,1 +1,1 @@
-# LeetCode-by Java
+# LeetCode-Java
